@@ -34,17 +34,44 @@ HDMI5 = ["HDMI5", "HDMI display 5\"", 121, 76, 2.85, HDMI5PCB,
           [[-2.5, -39], [10.5, -33]],               // clearance need for the ts ribbon
         ];
 
+LCD12864BPCB = [
+    "", 
+    "", 
+    64.6, 
+    33.4, 
+    2.8, 
+    0, 
+    0, 
+    0, 
+    "white", 
+    false, 
+    [], 
+    [],
+    [],
+    [],
+    [[-20.8,-16.7], [32.3,-16.7], [32.3,16.7], [-20.8,16.7], [-32.3,6.3], [-32.3,-6.3]],
+    ];
+
+LCD12864B = ["LCD12864B", "LCD display 12864B", 56.75, 38.6, 2.9, LCD12864BPCB,
+          [-4.25,-2.5,0],                             // pcb offst
+          [[-54.7 / 2, -37.6 / 2], [54.7 / 2, 30 / 2, 1.8]],   // aperture
+          [],                                       // touch screen
+          0,                                        // thread length
+          [[-2.5, -39], [10.5, -33]],               // clearance need for the ts ribbon
+        ];
+
+
 LCD1602APCB = ["", "", 80, 36, 1.65, 0, 2.9, 5, "green", false, [[-2.5, -2.5], [-2.5, 2.5], [2.5, 2.5], [2.5, -2.5]],
       [ [-27.05, - 2.5, 0, "2p54header", 16, 1]
       ],
       []];
 
 LCD1602A = ["LCD1602A", "LCD display 1602A", 71.3, 24.3, 7.0, LCD1602APCB,
-          [0, 0, 0],                             // pcb offst
-          [[-64.5 / 2, -14.5 / 2], [64.5 / 2, 14.5 / 2, 0.6]],              // aperture
-          [],                                       // touch screen
-          0,                                        // thread length
-          [],                                       // clearance need for the ts ribbon
+          [0, 0, 0],                                                    // pcb offst
+          [[-64.5 / 2, -14.5 / 2], [64.5 / 2, 14.5 / 2, 0.6]],          // aperture
+          [],                                                           // touch screen
+          0,                                                            // thread length
+          [],                                                           // clearance need for the ts ribbon
         ];
 
 LCDS7282BPCB = ["", "", 85, 36, 1.65, 0, 2.56, 0, "green", false, [[-2.5, -2.5], [-2.5, 2.5], [2.5, 2.5], [2.5, -2.5]],
@@ -73,6 +100,8 @@ SSD1963_4p3 = ["SSD1963_4p3", "LCD display SSD1963 4.3\"", 105.5, 67.2, 3.4, SSD
         [[0, -34.5], [12, -31.5]],
         ];
 
-displays = [HDMI5, SSD1963_4p3, LCD1602A, LCDS7282B];
+displays = [HDMI5, SSD1963_4p3, LCD1602A, LCDS7282B, LCD12864B];
 
 use <display.scad>
+
+//display(LCD12864B);
